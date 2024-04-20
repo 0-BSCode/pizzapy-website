@@ -1,4 +1,5 @@
 {
+    "installCommand": "pip install -r requirements.txt && cd PizzaPyWebApp/js_lib && npm install",
     "builds": [
       {
         "src": "PizzaPyWebApp/server/wsgi.py",
