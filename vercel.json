@@ -1,0 +1,17 @@
+{
+    "builds": [
+      {
+        "src": "PizzaPyWebApp/server/wsgi.py",
+        "use": "@vercel/python",
+        "config": {
+          "runtime": "python3.9"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "PizzaPyWebApp/server/wsgi.py"
+      }
+    ]
+}
