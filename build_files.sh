@@ -6,4 +6,4 @@ echo "Installing node dependencies..."
 cd PizzaPyWebApp/js_lib && npm i
 
 echo "Collecting static files..."
-cd .. && python3 manage.py collectstatic -y
+cd .. && python3 manage.py collectstatic --no-input
