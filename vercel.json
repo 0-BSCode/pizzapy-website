@@ -1,5 +1,4 @@
 {
-    "installCommand": "pip install -r requirements.txt && cd PizzaPyWebApp/js_lib && npm install",
     "builds": [
       {
         "src": "PizzaPyWebApp/server/wsgi.py",
@@ -7,9 +6,20 @@
         "config": {
           "runtime": "python3.9"
         }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+            "distDir": "staticfiles_build"
+        }
       }
     ],
     "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
       {
         "src": "/(.*)",
         "dest": "PizzaPyWebApp/server/wsgi.py"
