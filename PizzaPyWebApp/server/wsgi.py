@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PizzaPyWebApp.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.settings")
 
 # application not recognized on Vercel so use app instead
 # application = get_wsgi_application()
