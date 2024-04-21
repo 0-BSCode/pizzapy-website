@@ -1,14 +1,9 @@
 venv/
-PizzaPyWebApp/js_lib/node_modules
-PizzaPyWebApp/backend/__pycache__
-PizzaPyWebApp/backend/migrations
-PizzaPyWebApp/frontend/__pycache__
 # .gitignore content
 __pycache__/
 migrations/
+node_modules
 
 .history
-
-node_modules/
-__pycache__/
 bun.lockb
+staticfiles_build
