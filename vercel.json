@@ -24,6 +24,5 @@
         "src": "/(.*)",
         "dest": "PizzaPyWebApp/server/wsgi.py"
       }
-    ],
-    "outputDirectory": "staticfiles"
+    ]
 }
