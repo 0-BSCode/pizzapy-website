@@ -1,0 +1,38 @@
+<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+
+<!-- Navbar -->
+<div class="flex-none sm:hidden">
+    <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+        <!-- Adjust the width and height using Tailwind CSS classes only and remove the inline width and height -->
+        <svg fill="none" class="w-5 h-5" viewBox="0 0 24 24"> <!-- Adjusted to w-6 h-6 for 24x24 dimensions -->
+            <use xlink:href="../../static/css/icons.svg#hamburger"></use>
+        </svg>
+    </label>
+</div>
+
+<div class="z-40 drawer-side">
+    <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+
+    <ul class="flex flex-col justify-between min-h-full p-4 menu w-80 bg-base-200 dark:bg-gray-900">
+        <div class="flex items-center justify-center h-full">{% include 'partials/_logo.html' %}</div>
+
+        <!-- Dark mode bg color adjusted for visibility -->
+        <div>
+            <li><a href="{% url 'index' %}"
+                    class="dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400">Home</a>
+            </li>
+            <li><a href="{% url 'about_page' %}"
+                    class="dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400">About Us</a>
+            </li>
+            <li><a href="{% url 'events' %}"
+                    class="dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400">Events</a>
+            </li>
+        </div>
+        <!-- Button at the Bottom -->
+        <div class="pt-4 mt-auto">
+            <button
+                class="w-full text-white bg-blue-500 btn btn-primary dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700">Contact
+                Us</button>
+        </div>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+The Pizzapy User Group
+{% endblock %}
+
+{% block content %}
+{% include 'partials/header.html' %}
+
+<div class="relative flex flex-col items-center w-full bg-primary">
+    <!-- <img class="absolute w-[924px] h-[985px] top-[11px] left-[593px] object-cover" src="img/python-3d-image.png" /> -->
+    <div class="flex flex-col items-start justify-center gap-[80px] w-full px-[80px] py-[80px] pb-[120px]">
+        {% include 'partials/happening.html' %}
+        {% include 'partials/upcoming-events.html' %}
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}

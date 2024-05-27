@@ -22,4 +22,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("main/", include("app.urls")),
     path("", views.index, name="index"),
+    path('events/', views.event_page, name='events'),
+    path('about_us/', views.about_page, name='about_page'), 
 ]

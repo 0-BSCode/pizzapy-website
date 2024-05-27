@@ -1,0 +1,29 @@
+{
+    "sponsors": [
+        {
+            "name": "SmartFinder",
+            "link": "#yourlink",
+            "image": "https://via.placeholder.com/150x50?text=SmartFinder"
+        },
+        {
+            "name": "Zoomerr",
+            "link": "#yourlink",
+            "image": "https://via.placeholder.com/150x50?text=Zoomerr"
+        },
+        {
+            "name": "SHELLS",
+            "link": "#yourlink",
+            "image": "https://via.placeholder.com/150x50?text=SHELLS"
+        },
+        {
+            "name": "WAVES",
+            "link": "#yourlink",
+            "image": "https://via.placeholder.com/150x50?text=WAVES"
+        },
+        {
+            "name": "ArtVenue",
+            "link": "#yourlink",
+            "image": "https://via.placeholder.com/150x50?text=ArtVenue"
+        }
+    ]
+}

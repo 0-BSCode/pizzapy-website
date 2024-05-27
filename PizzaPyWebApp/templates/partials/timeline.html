@@ -1,0 +1,88 @@
+{% load static %} {# If you're using static files #}
+
+
+{% block content %}
+<div class="bg-[#010d1e] py-10">
+    <div class="flex flex-col items-center">
+
+        <!-- Timeline starts here -->
+        <div class="relative">
+            <!-- Vertical line in the center -->
+            <div class="absolute left-[calc(50%-0.5px)] top-0 bottom-0 w-1 bg-white"></div>
+
+            <!-- Timeline items -->
+            <!-- Item 1 -->
+            <div class="flex justify-center mb-10">
+                <div class="flex flex-col items-center mr-16">
+                    <div class="p-4 text-white bg-gray-800 rounded-md shadow-md">
+                        <div class="font-bold">Dec 1999</div>
+                        <p class="text-sm">
+                            Cebu GNU Linux Users' Group (CeGNULUG) was established...
+                        </p>
+                    </div>
+                    <div class="w-4 h-4 mt-4 bg-white rounded-full shadow-md"></div>
+                </div>
+                <div class="flex items-center justify-center w-64 h-64 bg-gray-300 rounded-md shadow-lg">
+                    <img src="../../static/images/256.png" alt="Event Image Placeholder" class="max-w-full max-h-full">
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex flex-row-reverse justify-center mb-10">
+                <div class="flex flex-col items-center ml-16">
+                    <div class="p-4 text-white bg-gray-800 rounded-md shadow-md">
+                        <div class="font-bold">Oct 2013</div>
+                        <p class="text-sm">
+                            PizzaPy Cebu Python Users Group was founded by Daryl Yu...
+                        </p>
+                    </div>
+                    <div class="w-4 h-4 mt-4 bg-white rounded-full shadow-md"></div>
+                </div>
+                <div class="flex items-center justify-center w-64 h-64 bg-gray-300 rounded-md shadow-lg">
+                    <img src="../../static/images/256.png6" alt="Event Image Placeholder" class="max-w-full max-h-full">
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex justify-center mb-10">
+                <div class="flex flex-col items-center mr-16">
+                    <div class="p-4 text-white bg-gray-800 rounded-md shadow-md">
+                        <div class="font-bold">Feb 2016</div>
+                        <p class="text-sm">
+                            PizzaPy helped out Python Philippines to organize PyCon...
+                        </p>
+                    </div>
+                    <div class="w-4 h-4 mt-4 bg-white rounded-full shadow-md"></div>
+                </div>
+                <div class="flex items-center justify-center w-64 h-64 bg-gray-300 rounded-md shadow-lg">
+                    <img src="../../static/images/256.png" alt="Event Image Placeholder" class="max-w-full max-h-full">
+                </div>
+            </div>
+
+            <!-- Additional items continue in the same pattern -->
+        </div>
+    </div>
+</div>
+
+<div class="bg-[#010d1e] py-10">
+    <div class="flex flex-col items-center">
+        <div class="relative">
+            <!-- Vertical line in the center -->
+            <div class="absolute left-[calc(50%-0.5px)] top-0 bottom-0 w-1 bg-white"></div>
+
+            <!-- Include the card for each timeline event -->
+            {% include 'partials/_timeline_card.html' with date='Dec 1999' description="Cebu GNU Linux Users' Group
+            (CeGNULUG)
+            was established..." img_url='../../static/images/256.png' %}
+            {% include 'partials/_timeline_card.html' with date='Oct 2013' description="PizzaPy Cebu Python Users
+            Group was
+            founded..." img_url='../../static/images/256.png' %}
+            {% include 'partials/_timeline_card.html' with date='Feb 2016' description="PizzaPy helped out Python
+            Philippines to
+            organize..." img_url='../../static/images/256.png' %}
+
+            <!-- Additional items continue in the same pattern -->
+        </div>
+    </div>
+</div>
+{% endblock %}

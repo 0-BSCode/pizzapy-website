@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dracula">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIZZAPY WEBSITE</title>
-    {% load static %}
-    <!-- <script src="{% static 'js/htmx.min.js' %}" defer></script> -->
-    <!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}" /> -->
-    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
-  </head>
-  <body>
-    <!-- use partials as if they are components like so -->
-    {% include 'partials/header.html' %}
-    <p className="text-sky-500 dark:text-sky-400">TEST LAYOUT</p>
-    <div class="container mt-4">{% block content %} {% endblock %}</div>
-    <button class="btn btn-primary">Primary</button>
-    <!-- Add links to HTMX and CSS file  -->
-    <!-- <script src="../static/js/htmx.min.js" defer></script> -->
-    <script
-      src="https://unpkg.com/htmx.org@1.9.2"
-      integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<html lang="en" data-theme="{{ theme }}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+  <script src="https://unpkg.com/htmx.org@1.9.2"
+    integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="overflow-x-hidden">
+  <main class="flex flex-col items-center justify-center overflow-x-hidden">
+    {% block content %} {% endblock %}
+  </main>
+
+  <footer class="overflow-x-hidden text-center">
+    {% block footer %} {% endblock %}
+  </footer>
+</body>
+
 </html>

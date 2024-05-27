@@ -1,0 +1,41 @@
+<label class="z-0 swap swap-rotate">
+    <!-- this hidden checkbox controls the state -->
+    <input type="checkbox" class="theme-controller" value="dark" />
+
+    <!-- sun icon -->
+    <svg class="w-10 h-10 fill-current swap-off " width="25" height="25">
+        <use xlink:href="../../static/css/icons.svg#sun"></use>
+    </svg>
+    <!-- moon icon -->
+    <svg class="w-10 h-10 fill-yellow-500 swap-on" width="25" height="25">
+        <use xlink:href="../../static/css/icons.svg#moon"></use>
+    </svg>
+</label>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const themeCheckbox = document.querySelector(".theme-controller");
+        const lightTheme = 'light';  // Define light theme name
+        const darkTheme = 'dark';    // Define dark theme name
+
+        // Function to apply a theme
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeCheckbox.checked = (theme === darkTheme);
+        }
+
+        // Load theme from localStorage or default to light
+        const savedTheme = localStorage.getItem("theme") || lightTheme;
+        applyTheme(savedTheme);
+
+        // Event listener for changing themes
+        themeCheckbox.addEventListener("change", function () {
+            if (this.checked) {
+                applyTheme(darkTheme);
+            } else {
+                applyTheme(lightTheme);
+            }
+        });
+    });
+
+</script>

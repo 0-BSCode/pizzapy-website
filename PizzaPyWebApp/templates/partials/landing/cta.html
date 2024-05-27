@@ -1,0 +1,50 @@
+<div class="relative flex flex-col items-center justify-center w-full h-[600px] overflow-hidden">
+    <img src="../../static/images/python-3d.png" alt="Background Image"
+        class="absolute w-[485.22px] h-[547.25px] left-[133.58px] rotate-[11.34deg] opacity-30 blur-[40px] z-0 animate-scaleDown" />
+
+    <div class="z-10 flex flex-col items-center gap-10 p-6 sm:gap-20 md:p-28">
+        <div class="flex flex-col items-center w-full gap-8"> <!-- Increased gap between elements -->
+            <div class="text-lg font-medium text-center text-yellow-300 uppercase">
+                <p
+                    class="text-xl font-extrabold text-center text-base-content sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+                    What are you waiting for? <br>
+                    <span class="text-2xl text-yellow-500 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Join us
+                        now.</span>
+                </p>
+            </div>
+            <p class="w-full text-sm text-center dark:text-gray-300 sm:w-3/4 sm:text-base md:text-lg">
+                Begin your journey into the wonderful world of Cebu, Python, and Pizza!
+            </p>
+
+            <div class="grid w-full gap-6 px-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 sm:px-0">
+                <!-- Adjusted gap between buttons -->
+                <a href="https://facebook.com/pizzapycebu" target="_blank" rel="noopener noreferrer"
+                    class="z-20 flex items-center justify-center w-full px-6 py-3 text-sm font-medium text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 mr-2 fill-current">
+                        <use xlink:href="../../static/css/icons.svg#facebook"></use>
+                    </svg>
+                    Follow us on Facebook
+                </a>
+                <a href="https://meetup.com/pizzapycebu" target="_blank" rel="noopener noreferrer"
+                    class="z-20 flex items-center justify-center w-full px-6 py-3 text-sm font-medium text-gray-900 transition duration-150 ease-in-out bg-gray-300 border border-gray-300 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 mr-2 fill-current">
+                        <use xlink:href="../../static/css/icons.svg#meetup"></use>
+                    </svg>
+                    Join us on Meetup
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes scaleDown {
+        from {
+            transform: scale(1.5) rotate(11.34deg);
+        }
+
+        to {
+            transform: scale(1) rotate(11.34deg);
+        }
+    }
+</style>

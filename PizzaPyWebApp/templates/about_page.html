@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block title %}
+The Pizzapy User Group
+{% endblock %}
+<style>
+    /* Create the slanted cut-off background using clip-path */
+    .diagonal-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../static/images/924x985.png');
+        /* Placeholder image */
+        /* Update the image URL path */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 100%);
+        opacity: 0.33;
+        /* Adjust opacity as needed */
+        -webkit-backdrop-filter: blur(12px);
+        /* Apply blur for Safari */
+        backdrop-filter: blur(12px);
+        /* Apply blur */
+        z-index: -1;
+    }
+</style>
+{% block content %}
+{% include 'partials/header.html' %}
+<div class="flex flex-col items-center w-full relative bg-[#010d1e] overflow-x-hidden">
+    <div
+        class="relative flex flex-col items-center w-full min-h-screen px-20 py-32 bg-[#010d1e] text-white diagonal-bg">
+        <!-- Slanted background with blurred image -->
+        <!-- Content goes here -->
+        <!-- Overlay content -->
+        <div class="z-10">
+            <h1 class="text-center text-[72px] font-extrabold">A Python User Group</h1>
+            <h2 class="text-center text-[72px] font-extrabold text-[#ffba33]">based in Cebu, Philippines</h2>
+            <p class="text-center text-[18px] max-w-[708px]">
+                Numbered among us are team members from various tech companies, students, freelancers, instructors, and
+                individuals from other industries. We welcome any enthusiast regardless of race, gender, and even skill
+                level.
+            </p>
+        </div>
+    </div>
+    <div class="relative flex flex-col items-center w-full px-20 py-32 bg-[#010d1e] text-white">
+        <!-- Background image with rotation and opacity -->
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="../static/images/924x985.png" alt="Group Photo"
+                class="object-cover w-full h-full transform scale-125 opacity-30 -rotate-12">
+        </div>
+
+        <!-- Overlay content -->
+        <div class="z-10">
+            <h1 class="text-center text-[72px] font-extrabold">A Python User Group</h1>
+            <h2 class="text-center text-[72px] font-extrabold text-[#ffba33]">based in Cebu, Philippines</h2>
+            <p class="text-center text-[18px] max-w-[708px]">
+                Numbered among us are team members from various tech companies, students, freelancers, instructors, and
+                individuals from other industries. We welcome any enthusiast regardless of race, gender, and even skill
+                level.
+            </p>
+        </div>
+    </div>
+
+    <!-- Clean Design Image -->
+    <img class="mt-5 w-[748px] h-[498px] object-cover" src="../static/images/748x498.png"
+        alt="Minimalist design related to Python coding">
+
+    <div class="flex flex-col items-center w-full gap-16 px-20 py-20">
+        <!-- Partner Community Logos -->
+        <div class="flex flex-col items-center gap-8">
+            <p class="text-center text-[24px] font-bold text-[#b3b8c3]">Special thanks to our partner communities</p>
+        </div>
+        <div class="flex flex-wrap justify-center px-6 gap-x-8 gap-y-16">
+            <!-- Placeholder divs for logos of partner communities -->
+            <!-- Example: <div class="w-24 h-24 bg-[url('/path/to/logo.png')] bg-cover"></div> -->
+        </div>
+
+        <div class="flex flex-col items-center gap-8">
+            <p class="text-center text-[24px] font-bold text-[#b3b8c3]">and our affiliated communities & organizations
+            </p>
+        </div>
+        <div class="flex flex-wrap justify-center px-6 gap-x-8 gap-y-16">
+            <img src="../static/images/107x40.png" class="w-[107px] h-[40px]" alt="CIB-o logo">
+            <img src="../static/images/80.png" class="w-20 h-20" alt="Python PH logo">
+            <!-- Placeholder for Philippine Tech logo -->
+        </div>
+    </div>
+
+    {% include 'partials/timeline.html' %}
+
+
+    <div class="text-center text-[56px] font-extrabold text-white">And further beyond...</div>
+
+    <!-- Event Section Images -->
+    <div class="flex flex-col items-start gap-2.5 p-20">
+        <div class="flex items-start w-full">
+            <!-- Placeholder for picture -->
+            <div class="flex flex-col items-start p-20 bg-[#010d1e] flex-grow">
+                <div class="flex flex-col items-start w-full gap-4">
+                    <div class="text-[20px] font-bold text-[#ffba33]">OUR EVENTS</div>
+                    <div class="text-[56px] font-extrabold text-white">Browse our past events.</div>
+                </div>
+                <p class="text-[18px] text-white">
+                    Here are some of our past events and meet ups. If you’d like to catch up on our upcoming events,
+                    please visit our event page.
+                </p>
+                <button
+                    class="mt-4 flex items-center justify-center w-64 px-4 py-4 bg-[#5247ff] rounded-lg border border-solid border-[#434e62]">
+                    <span class="text-[20px] font-medium text-white">View our Events</span>
+                </button>
+            </div>
+        </div>
+        <div class="flex items-start w-full gap-2.5">
+            <!-- Additional placeholders for more pictures -->
+            <div class="flex items-center justify-center w-1/4 bg-gray-300 h-60">
+                <img src="../static/images/150.png" alt="Image Placeholder" class="max-w-full max-h-full">
+            </div>
+            <div class="flex items-center justify-center w-1/4 bg-gray-300 h-60">
+                <img src="../static/images/150.png" alt="Image Placeholder" class="max-w-full max-h-full">
+            </div>
+            <div class="flex items-center justify-center w-1/4 bg-gray-300 h-60">
+                <img src="../static/images/150.png" alt="Image Placeholder" class="max-w-full max-h-full">
+            </div>
+            <div class="flex items-center justify-center w-1/4 bg-gray-300 h-60">
+                <img src="../static/images/150.png" alt="Image Placeholder" class="max-w-full max-h-full">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}

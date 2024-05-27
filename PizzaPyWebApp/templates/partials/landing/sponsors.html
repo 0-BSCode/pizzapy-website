@@ -1,0 +1,102 @@
+<div class="flex flex-col items-center justify-center w-full px-4 md:px-8 lg:px-16">
+    <h2 class="py-6 mb-6 text-2xl font-bold text-center dark:text-white">Special thanks to our sponsors</h2>
+    <div class="w-full max-w-4xl scroller" data-animated="true">
+        <div class="scroller__inner"></div>
+    </div>
+</div>
+
+
+<style>
+    .scroller {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .scroller__inner {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        animation: scroll 20s linear infinite;
+    }
+
+    .scroller__inner>* {
+        flex: 0 0 auto;
+        margin-right: 20px;
+        /* Add space between items */
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollerInner = document.querySelector('.scroller__inner');
+
+        // Fetch initial sponsor data from JSON file
+        fetch('../../../static/data/sponsors.json')
+            .then(response => response.json())
+            .then(data => {
+                populateScroller(data.sponsors);
+            })
+            .catch(error => console.error('Error fetching sponsors:', error));
+
+        const scroller = document.querySelector('.scroller');
+        scroller.addEventListener('mouseover', () => {
+            scrollerInner.style.animationPlayState = 'paused';
+        });
+
+        scroller.addEventListener('mouseout', () => {
+            scrollerInner.style.animationPlayState = 'running';
+        });
+
+        // Periodically update the scroller content
+        setInterval(updateScrollerContent, 30000); // Update every 30 seconds
+
+        function populateScroller(sponsors) {
+            // Clear existing content
+            while (scrollerInner.firstChild) {
+                scrollerInner.removeChild(scrollerInner.firstChild);
+            }
+
+            // Add new items
+            sponsors.forEach(sponsor => {
+                const item = document.createElement('a');
+                item.href = sponsor.link;
+                item.className = 'flex items-center px-12 py-4';
+                item.innerHTML = `<img src="${sponsor.image}" alt="${sponsor.name}" class="h-16">`;
+                scrollerInner.appendChild(item);
+
+                // Clone items to create an infinite loop effect
+                const clone = item.cloneNode(true);
+                scrollerInner.appendChild(clone);
+            });
+        }
+
+        function updateScrollerContent() {
+            // Fetch new content (for example, via an API call)
+            fetch("../../../static/data/sponsors.json")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log("Fetched updated data:", data); // Log the fetched data
+                    populateScroller(data.sponsors);
+                })
+                .catch((error) => console.error("Error fetching sponsors:", error));
+        }
+    });
+</script>
+
+<!-- <script src="../../../static/script/sponsors.js"></script> -->
