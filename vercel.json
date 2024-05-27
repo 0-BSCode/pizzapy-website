@@ -11,18 +11,19 @@
         "src": "build_files.sh",
         "use": "@vercel/static-build",
         "config": {
-            "distDir": "PizzaPyWebApp/static/staticfiles_build"
+            "distDir": "staticfiles"
         }
       }
     ],
     "routes": [
         {
             "src": "/static/(.*)",
-            "dest": "/PizzaPyWebApp/static/$1"
+            "dest": "/static/$1"
         },
       {
         "src": "/(.*)",
         "dest": "PizzaPyWebApp/server/wsgi.py"
       }
-    ]
+    ],
+    "outputDirectory": "staticfiles"
 }
