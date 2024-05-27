@@ -131,3 +131,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+"""
+TODO
+1. Check why "server" module is not found
+2. Try to serve static files instead
+"""
