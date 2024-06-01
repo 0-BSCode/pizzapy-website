@@ -122,8 +122,7 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATIC_HOST = "https://django-htmx-two.vercel.app" if not DEBUG else ""
-STATIC_URL = STATIC_HOST + "/static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
