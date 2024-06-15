@@ -1,0 +1,11 @@
+venv/
+
+# .gitignore content
+__pycache__/
+migrations/
+
+.history
+
+node_modules/
+__pycache__/
+bun.lockb
