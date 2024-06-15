@@ -19,6 +19,4 @@ COPY . .
 
 RUN cd PizzaPyWebApp/js_lib && npm install
 
-EXPOSE 8000
-
-CMD ["python", "PizzaPyWebApp/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "PizzaPyWebApp/manage.py", "runserver", "0.0.0.0"]
